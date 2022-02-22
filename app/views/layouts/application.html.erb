@@ -11,8 +11,18 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <nav class="sidebar">
+      <nav class="resources">
+        <strong><%= current_user.email %></strong>
+        <p>
+          <strong>Sand:</strong><span id="sand"><%= current_user.sand %></span>
+        </p>
+      </nav>
+    </nav>
+    <div class="main">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -3,12 +3,17 @@ class DiggingController < ApplicationController
   end
 
   def dig
-    @sand = rand(100)
+    sand = rand(100)
     @item = %w(Apfelkitsch Altmetall).shuffle.first
+
+    current_user.sand += sand
+    current_user.save!
 
     ActionCable.server.broadcast(
       "dig_queue", {
-        body: render_to_string(partial: 'digging/resources', locals: { sand: @sand, item: @item })
+        sand_total: current_user.sand,
+        sand: sand,
+        body: render_to_string(partial: 'digging/resources', locals: { sand: sand, item: @item })
       }
     )
   end
