@@ -4,10 +4,12 @@ fmueller83@googlemail.com <Fabian Müller>
 
 # Game Loop
 
-Users dig in the dig site for items and Sand.
-
-Sand can be traded for experience or better equipment.
-
-Items and total amount of Sand is the total score.
-
-Players can compete in a high score shown on a highscore page.
+- [x] Users dig in the dig site for sand
+- [ ] Users dig in the dig site for items
+- [ ] Sand can be traded for experience
+- [ ] Users can levelup
+- [ ] Users can find items while digging
+- [ ] Users have basic loeffel equipped
+- [ ] Users can upgrade the loeffel equipment
+- [ ] sand can be traded for better equipment
+- [ ] Highscore list
