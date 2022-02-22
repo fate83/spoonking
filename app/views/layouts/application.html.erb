@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Spoonking</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Spoonking</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
 
-  <body>
-    <nav class="sidebar">
-      <% if signed_in? %>
-        <nav class="resources">
-          <strong><%= current_user.email %></strong>
-          <p>
-            <strong>Sand:</strong><span id="sand"><%= current_user.sand %></span>
-          </p>
-        </nav>
-      <% end %>
+<body>
+<nav class="sidebar">
+  <% if signed_in? %>
+    <nav class="resources">
+      <h2>Player</h2>
+      <strong><%= current_user.email %></strong>
+      <p>
+        <strong>Sand:</strong><span id="sand"><%= current_user.sand %></span>
+      </p>
     </nav>
-    <div class="main">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
-    </div>
-  </body>
+  <% end %>
+</nav>
+<div class="main">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <%= yield %>
+</div>
+</body>
 </html>

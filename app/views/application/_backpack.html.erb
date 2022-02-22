@@ -1,0 +1,9 @@
+<h2>Backpack</h2>
+<table>
+  <% current_user.backpack_items.each do |bi| %>
+    <tr>
+      <td><%= bi.amount %></td>
+      <td><%= bi.item.name %></td>
+    </tr>
+  <% end %>
+</table>

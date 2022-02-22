@@ -4,4 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :trackable
+
+  has_many :backpack_items, dependent: :destroy
+  has_many :items, through: :backpack_items
 end
