@@ -1,9 +1,6 @@
 <% unless @errors %>
-  <%= turbo_stream.update 'exp' do %>
-    <%= current_user.exp %>
-  <% end %>
-  <%= turbo_stream.update 'sand' do %>
-    <%= current_user.sand %>
+  <%= turbo_stream.update dom_id(current_user) do %>
+    <%= render partial: 'application/user' %>
   <% end %>
   <%= turbo_stream.update 'convert_errors' do %>
     Converted <%= @sand_amount %> Sand to EXP

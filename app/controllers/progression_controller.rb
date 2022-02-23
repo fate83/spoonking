@@ -7,4 +7,11 @@ class ProgressionController < ApplicationController
       @errors = current_user.errors.full_messages
     end
   end
+
+  def level_up
+    if current_user.can_level_up?
+      current_user.level_up
+      current_user.save!
+    end
+  end
 end

@@ -1,13 +1,18 @@
-<nav id="<%= dom_id(current_user) %>>" class="resources">
+<div class="user">
   <h2><strong><%= current_user.email %></strong></h2>
   <p>
     <strong>Level: </strong><span id="level"><%= current_user.level %></span>
+    <% if current_user.can_level_up? %>
+      <%= button_to "level up", level_up_url, class: "level-up-button", remote: true %>
+    <% end %>
   </p>
   <p>
     <strong>Experience: </strong><span id="exp"><%= current_user.exp %></span>
   </p>
-
+  <p>
+    <strong>EXP for Level Up: </strong><span id="exp"><%= current_user.exp_for_level_up %></span>
+  </p>
   <p>
     <strong>Sand:</strong><span id="sand"><%= current_user.sand %></span>
   </p>
-</nav>
+</div>

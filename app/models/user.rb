@@ -25,4 +25,30 @@ class User < ApplicationRecord
     self.exp  += amount
     self.sand -= amount
   end
+
+  def level_up
+    if can_level_up?
+      self.level += 1
+    else
+      false
+    end
+  end
+
+  def exp_for_level_up
+    if can_level_up?
+      0
+    else
+      User.exp_needed_for_level_up(self.level) - self.exp
+    end
+  end
+
+  def can_level_up?
+    self.exp >= User.exp_needed_for_level_up(self.level)
+  end
+
+  def self.exp_needed_for_level_up(level, start_exp = 200)
+    return 0 if level == 0
+    return start_exp if level == 1
+    exp_needed_for_level_up(level - 1, start_exp + 100) + exp_needed_for_level_up(level - 2, start_exp - 100)
+  end
 end

@@ -12,9 +12,12 @@
 
 <body>
 <nav class="sidebar">
-  <%= render 'application/resources' if current_user %>
+  <div id="<%= dom_id(current_user) %>">
+    <%= render 'application/user' if current_user %>
+  </div>
 </nav>
-<div class="main">
+<div class=" main
+      ">
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <%= yield %>
