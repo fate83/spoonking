@@ -12,3 +12,8 @@ fmueller83@googlemail.com <Fabian Müller>
 - [ ] Users have basic loeffel equipped
 - [ ] Sand can be used to upgrade equipment
 - [ ] Users are shown on a highscore list
+
+# Visuals
+
+- [ ] Style Dig Button
+    - [ ] Make Big and Red
