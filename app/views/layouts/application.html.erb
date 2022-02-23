@@ -12,21 +12,7 @@
 
 <body>
 <nav class="sidebar">
-  <% if signed_in? %>
-    <nav class="resources">
-      <h2><strong><%= current_user.email %></strong></h2>
-      <p>
-        <strong>Level: </strong><span><%= current_user.level %></span>
-      </p>
-      <p>
-        <strong>Experience: </strong><span><%= current_user.exp %></span>
-      </p>
-
-      <p>
-        <strong>Sand:</strong><span id="sand"><%= current_user.sand %></span>
-      </p>
-    </nav>
-  <% end %>
+  <%= render 'application/resources' if current_user %>
 </nav>
 <div class="main">
   <p class="notice"><%= notice %></p>

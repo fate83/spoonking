@@ -1,0 +1,13 @@
+<nav id="<%= dom_id(current_user) %>>" class="resources">
+  <h2><strong><%= current_user.email %></strong></h2>
+  <p>
+    <strong>Level: </strong><span id="level"><%= current_user.level %></span>
+  </p>
+  <p>
+    <strong>Experience: </strong><span id="exp"><%= current_user.exp %></span>
+  </p>
+
+  <p>
+    <strong>Sand:</strong><span id="sand"><%= current_user.sand %></span>
+  </p>
+</nav>

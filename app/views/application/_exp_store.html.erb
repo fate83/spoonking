@@ -1,0 +1,7 @@
+<%= form_with url: convert_sand_url, method: :post do |form| %>
+  <h2>Convert Sand to EXP</h2>
+  <%= form.label :sand_amount, "Sand:" %>
+  <%= form.number_field :sand_amount, value: 100, in: 100..current_user.exp, step: 100 %>
+  <%= form.submit "Convert" %>
+<% end %>
+<div id="convert_errors"></div>

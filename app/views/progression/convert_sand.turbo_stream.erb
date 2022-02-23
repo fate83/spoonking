@@ -1,0 +1,17 @@
+<% unless @errors %>
+  <%= turbo_stream.update 'exp' do %>
+    <%= current_user.exp %>
+  <% end %>
+  <%= turbo_stream.update 'sand' do %>
+    <%= current_user.sand %>
+  <% end %>
+  <%= turbo_stream.update 'convert_errors' do %>
+    Converted <%= @sand_amount %> Sand to EXP
+  <% end %>
+<% else %>
+  <%= turbo_stream.update 'convert_errors' do %>
+    <% @errors.each do |error| %>
+      <%= error %>
+    <% end %>
+  <% end %>
+<% end %>
