@@ -8,9 +8,7 @@ fmueller83@googlemail.com <Fabian Müller>
 - [x] Users can dig in the dig site for items
 - [x] Users can gain experience
 - [x] Sand can be traded for experience
-- [ ] Users can levelup
-- [ ] Users can find items while digging
+- [ ] Users can level up
 - [ ] Users have basic loeffel equipped
-- [ ] Users can upgrade the loeffel equipment
-- [ ] sand can be traded for better equipment
-- [ ] Highscore list
+- [ ] Sand can be used to upgrade equipment
+- [ ] Users are shown on a highscore list
