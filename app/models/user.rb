@@ -7,4 +7,16 @@ class User < ApplicationRecord
 
   has_many :backpack_items, dependent: :destroy
   has_many :items, through: :backpack_items
+
+  validates :level, numericality: { greater_than_or_equal_to: 1, only_integer: true }
+  validates :exp, numericality: { greater_than_or_equal_to: 0, only_integer: true }
+
+  def gain_exp! amount
+    gain_exp amount
+    save!
+  end
+
+  def gain_exp amount
+    self.exp += amount
+  end
 end
