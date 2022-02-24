@@ -10,7 +10,7 @@ class DiggingControllerTest < ActionDispatch::IntegrationTest
   test "confirmed user can see home page after login" do
     get user_session_path
     assert_equal 200, status
-    post user_session_path, params: {'user[email]' => @user.email, 'user[password]' =>  "helloworld"}
+    post user_session_path, params: { 'user[email]' => @user.email, 'user[password]' => "helloworld" }
     follow_redirect!
 
     assert_equal 200, status
