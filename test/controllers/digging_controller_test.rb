@@ -20,7 +20,8 @@ class DiggingControllerTest < ActionDispatch::IntegrationTest
   test "increase amount of sand after dig" do
     sign_in(@user)
     assert_changes -> { @user.sand } do
-      post dig_url
+      post dig_url, xhr: true
     end
+    assert_response :success
   end
 end
