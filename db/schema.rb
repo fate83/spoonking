@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_23_143755) do
+ActiveRecord::Schema[7.0].define(version: 2022_02_24_162443) do
   create_table "backpack_items", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "item_id", null: false
@@ -19,6 +19,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_23_143755) do
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_backpack_items_on_item_id"
     t.index ["user_id"], name: "index_backpack_items_on_user_id"
+  end
+
+  create_table "equipment", force: :cascade do |t|
+    t.string "name", default: "Löffel"
+    t.integer "level", default: 1
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_equipment_on_user_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -59,4 +68,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_23_143755) do
 
   add_foreign_key "backpack_items", "items"
   add_foreign_key "backpack_items", "users"
+  add_foreign_key "equipment", "users"
 end

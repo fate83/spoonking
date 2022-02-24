@@ -15,4 +15,9 @@
   <p>
     <strong>Sand:</strong><span id="sand"><%= current_user.sand %></span>
   </p>
+  <p>
+    <strong>Equipment: </strong>
+    <span><%= current_user.equipment.name %></span>
+    <span>(Level <%= current_user.equipment.level %>)</span>
+  </p>
 </div>

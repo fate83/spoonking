@@ -14,3 +14,5 @@ user1 = User.create!(
 )
 
 user1.backpack = Item.all
+
+user1.create_equipment!
