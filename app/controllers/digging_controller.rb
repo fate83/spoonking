@@ -17,10 +17,9 @@ class DiggingController < ApplicationController
 
     ActionCable.server.broadcast(
       "dig_queue", {
-      sand_total: current_user.sand,
-      sand:       sand,
-      body:       render_to_string(partial: 'digging/resources', locals: { sand: sand, item: item.name }),
-      backpack:   render_to_string(partial: 'backpack')
+      user_dom_id: helpers.dom_id(current_user),
+      user_info:   render_to_string(partial: 'application/user'),
+      backpack:    render_to_string(partial: 'backpack')
     }
     )
   end

@@ -53,4 +53,26 @@ class User < ApplicationRecord
     return start_exp if level == 1
     exp_needed_for_level_up(level - 1, start_exp + 100) + exp_needed_for_level_up(level - 2, start_exp - 100)
   end
+
+  def can_afford_next_equippment?
+    can_afford? equipment.sand_needed_for_upgrade
+  end
+
+  def upgrade_equipment!
+    if can_afford_next_equippment?
+      equipment.upgrade!
+      pay!(equipment.sand_needed_for_upgrade)
+    end
+  end
+
+  def pay!(amount)
+    if can_afford? amount
+      self.sand -= amount
+      save
+    end
+  end
+
+  def can_afford? amount
+    self.sand >= amount
+  end
 end
