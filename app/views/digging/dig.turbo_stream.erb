@@ -1,0 +1,9 @@
+<%= turbo_stream.update dom_id(current_user) do %>
+  <%= render partial: 'application/user' %>
+<% end %>
+<%= turbo_stream.update "resources" do %>
+  <%= render partial: 'digging/resources', locals: { sand: @sand, item: @item.name } %>
+<% end %>
+<%= turbo_stream.update "backpack" do %>
+  <%= render partial: 'application/backpack' %>
+<% end %>

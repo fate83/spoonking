@@ -10,9 +10,9 @@ consumer.subscriptions.create("DiggerChannel", {
   },
 
   received(data) {
-    let user_info = document.querySelector("#" + data.user_dom_id)
-    let backpack = document.querySelector("#backpack")
-    backpack.innerHTML = data.backpack
-    user_info.innerHTML = data.user_info
+    // let user_info = document.querySelector("#" + data.user_dom_id)
+    // let backpack = document.querySelector("#backpack")
+    // backpack.innerHTML = data.backpack
+    // user_info.innerHTML = data.user_info
   }
 });
