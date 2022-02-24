@@ -12,9 +12,11 @@
 
 <body>
 <nav class="sidebar">
-  <div id="<%= dom_id(current_user) %>">
-    <%= render 'application/user' if current_user %>
-  </div>
+  <% if signed_in? %>
+    <div id="<%= dom_id(current_user) %>">
+      <%= render 'application/user' if current_user %>
+    </div>
+  <% end %>
 </nav>
 <div class=" main
       ">
