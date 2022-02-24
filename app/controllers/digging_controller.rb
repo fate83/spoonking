@@ -9,7 +9,7 @@ class DiggingController < ApplicationController
     current_user.sand += sand
     current_user.save!
 
-    item          = Item.find(rand(count) + 1)
+    item          = Item.find(Item.pluck(:id).shuffle.first)
     backpack_item = current_user.backpack_items.find_or_create_by(item: item)
 
     backpack_item.amount += 1
