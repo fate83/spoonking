@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  LEVEL_CAP = 10
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -45,6 +46,7 @@ class User < ApplicationRecord
   end
 
   def can_level_up?
+    return false if at_level_cap?
     self.exp >= User.exp_needed_for_level_up(self.level)
   end
 
@@ -74,5 +76,13 @@ class User < ApplicationRecord
 
   def can_afford? amount
     self.sand >= amount
+  end
+
+  def at_level_cap?
+    if self.level > LEVEL_CAP
+      raise StandardError.new "User level should never exceed hard level cap #{LEVEL_CAP}, but was: #{self.level}"
+    end
+    
+    self.level == LEVEL_CAP
   end
 end

@@ -14,4 +14,20 @@ class UserTest < ActiveSupport::TestCase
     user.gain_exp user.exp_for_level_up
     assert user.can_level_up?
   end
+
+  test "user can level to level 10" do
+    user = users(:one)
+    assert_equal user.level, 1
+    9.times do
+      assert_difference -> { user.level } => 1 do
+        user.exp = User.exp_needed_for_level_up(user.level)
+        user.level_up
+      end
+    end
+    assert_equal user.level, 10
+    assert_difference -> { user.level } => 0 do
+      user.exp = User.exp_needed_for_level_up(user.level)
+      user.level_up
+    end
+  end
 end
