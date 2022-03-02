@@ -1,11 +1,19 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Spoon
   user: one
   level: 1
+  efficiency: 1.00
 
 two:
-  name: MyString
+  name: Double-Spoon
   user: two
   level: 1
+  efficiency: 1.05
+
+three:
+  name: Uber-Spoon
+  user: two
+  level: 1
+  efficiency: 1.10

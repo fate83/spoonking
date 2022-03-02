@@ -3,7 +3,7 @@ class DiggingController < ApplicationController
   end
 
   def dig
-    @sand = rand(100)
+    @sand = current_user.equipment.dig
 
     current_user.sand += @sand
     current_user.save!
