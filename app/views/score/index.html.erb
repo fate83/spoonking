@@ -1,0 +1,19 @@
+<%= link_to "Back to Diggin'", dig_site_url %>
+<h1>Top 10</h1>
+
+<table id="top-10">
+  <thead>
+  <th class="idx">#</th>
+  <th class="email">Username/E-Mail</th>
+  <th class="score">Sand/Score</th>
+  </thead>
+  <tbody>
+  <% @scorers.each_with_index do |user, idx| %>
+    <tr>
+      <td class="idx"><%= idx + 1 %></td>
+      <td class="email"><%= user.email %></td>
+      <td class="score"><%= user.sand %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

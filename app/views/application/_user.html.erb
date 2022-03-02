@@ -1,29 +1,27 @@
-<div class="user">
-  <h2><strong><%= current_user.email %></strong></h2>
-  <p>
-    <strong>Level: </strong><span id="level"><%= current_user.level %></span>
-    <% if current_user.can_level_up? %>
-      <%= button_to "level up", level_up_url, class: "level-up-button", remote: true %>
-    <% end %>
-  </p>
-  <p>
-    <strong>Experience: </strong><span id="exp"><%= current_user.exp %></span>
-  </p>
-  <p>
-    <strong>EXP for Level Up: </strong><span id="exp"><%= current_user.exp_for_level_up %></span>
-  </p>
-  <p>
-    <strong>Sand:</strong><span id="sand"><%= current_user.sand %></span>
-  </p>
-  <p>
-    <strong>Equipment: </strong>
-    <span><%= current_user.equipment.name %></span>
-    <span>(Level <%= current_user.equipment.level %>)</span>
-  </p>
-  <% if current_user.can_afford_next_equippment? %>
-    <%= button_to "upgrade equippment (#{current_user.equipment.sand_needed_for_upgrade} Sand)",
-                  upgrade_equipment_url,
-                  class:  "upgrade-equipment-button",
-                  remote: true %>
+<h2><strong><%= current_user.email %></strong></h2>
+<p>
+  <strong>Level: </strong><span id="level"><%= current_user.level %></span>
+  <% if current_user.can_level_up? %>
+    <%= button_to "level up", level_up_url, class: "level-up-button", remote: true %>
   <% end %>
-</div>
+</p>
+<p>
+  <strong>Experience: </strong><span id="exp"><%= current_user.exp %></span>
+</p>
+<p>
+  <strong>EXP for Level Up: </strong><span id="exp"><%= current_user.exp_for_level_up %></span>
+</p>
+<p>
+  <strong>Sand:</strong><span id="sand"><%= current_user.sand %></span>
+</p>
+<p>
+  <strong>Equipment: </strong>
+  <span><%= current_user.equipment.name %></span>
+  <span>(Level <%= current_user.equipment.level %>)</span>
+</p>
+<% if current_user.can_afford_next_equippment? %>
+  <%= button_to "upgrade equippment (#{current_user.equipment.sand_needed_for_upgrade} Sand)",
+                upgrade_equipment_url,
+                class:  "upgrade-equipment-button",
+                remote: true %>
+<% end %>

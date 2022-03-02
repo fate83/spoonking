@@ -11,7 +11,7 @@ fmueller83@googlemail.com <Fabian Müller>
 - [x] Users can level up
 - [x] Users have basic loeffel equipped
 - [x] Sand can be used to upgrade equipment
-- [ ] Users are shown on a highscore list
+- [x] Users are shown on a highscore list
 - [ ] User level is capped at 10
 - [ ] User dig sand corresponding to the equipment level
 - [ ] Equip level is capped at 10

@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   post 'convert', to: 'progression#convert_sand', as: :convert_sand
   post 'level_up', to: 'progression#level_up', as: :level_up
   post 'upgrade_equipment', to: 'equipments#upgrade', as: :upgrade_equipment
+
+  get 'top10', to: 'score#index', as: :top10
+
   root "digging#index", as: :dig_site
 end

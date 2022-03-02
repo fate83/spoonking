@@ -1,3 +1,12 @@
+<%= link_to "Highscore Top 10", top10_url %>
+
+<div class="user-info">
+  <% if signed_in? %>
+    <div id="<%= dom_id(current_user) %>">
+      <%= render 'application/user' if current_user %>
+    </div>
+  <% end %>
+</div>
 <div id=backpack>
   <%= render partial: 'backpack' %>
 </div>
