@@ -8,9 +8,11 @@
 <p>
   <strong>Experience: </strong><span id="exp"><%= current_user.exp %></span>
 </p>
-<p>
-  <strong>EXP for Level Up: </strong><span id="exp"><%= current_user.exp_for_level_up %></span>
-</p>
+<% if current_user.can_level_up? %>
+  <p>
+    <strong>EXP for Level Up: </strong><span id="exp"><%= current_user.exp_for_level_up %></span>
+  </p>
+<% end %>
 <p>
   <strong>Sand:</strong><span id="sand"><%= current_user.sand %></span>
 </p>

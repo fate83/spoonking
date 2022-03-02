@@ -16,6 +16,8 @@
 <div id="dig-button">
   <%= render 'dig_button' %>
 </div>
-<div id="exp-store">
-  <%= render 'exp_store' %>
-</div>
+<% if current_user.can_level_up? %>
+  <div id="exp-store">
+    <%= render 'exp_store' %>
+  </div>
+<% end %>
