@@ -14,7 +14,7 @@ fmueller83@googlemail.com <Fabian Müller>
 - [x] Users are shown on a highscore list
 - [x] User level is capped at 10
 - [x] User dig sand corresponding to the equipment level
-- [ ] Equip level is capped at 10
+- [x] Equip level is capped at 10
 - [ ] Add level 2 equipment with better efficiency but higher cost
 
 # Visuals
