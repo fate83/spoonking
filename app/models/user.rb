@@ -85,4 +85,14 @@ class User < ApplicationRecord
     
     self.level == LEVEL_CAP
   end
+
+  def reset!
+    update level: 1,
+           exp:   0,
+           sand:  0
+    backpack.destroy_all unless backpack.empty?
+    e = equipment
+    create_equipment!
+    e.destroy!
+  end
 end
