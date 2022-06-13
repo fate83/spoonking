@@ -9,7 +9,8 @@ class User < ApplicationRecord
   has_many :backpack_items, dependent: :destroy
   has_many :items, through: :backpack_items
   has_many :backpack, through: :backpack_items, source: :item
-  has_one :equipment, dependent: :destroy
+  has_one :equipment, dependent: :destroy, foreign_key: 'worn_by_user_id'
+  has_many :equipments, dependent: :destroy
 
   validates :sand, numericality: { greater_than_or_equal_to: 0, only_integer: true }
   validates :level, numericality: { greater_than_or_equal_to: 1, only_integer: true }
@@ -82,7 +83,7 @@ class User < ApplicationRecord
     if self.level > LEVEL_CAP
       raise StandardError.new "User level should never exceed hard level cap #{LEVEL_CAP}, but was: #{self.level}"
     end
-    
+
     self.level == LEVEL_CAP
   end
 
@@ -91,8 +92,7 @@ class User < ApplicationRecord
            exp:   0,
            sand:  0
     backpack.destroy_all unless backpack.empty?
-    e = equipment
-    create_equipment!
-    e.destroy!
+    equipment.destroy! if equipment
+    equipment = equipments.create!
   end
 end

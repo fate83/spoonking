@@ -2,12 +2,14 @@
 
 one:
   name: Spoon
+  wearer: one
   user: one
   level: 1
   efficiency: 1.00
 
 two:
   name: Double-Spoon
+  wearer: two
   user: two
   level: 1
   efficiency: 1.05

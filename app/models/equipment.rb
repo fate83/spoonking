@@ -3,6 +3,7 @@ class Equipment < ApplicationRecord
   LEVEL_CAP      = 10
 
   belongs_to :user
+  belongs_to :wearer, class_name: 'User', foreign_key: 'worn_by_user_id', optional: true
 
   def self.sand_needed_for_equipment(level, start_exp = 100)
     100 + (100 * (level - 1))
