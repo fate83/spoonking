@@ -16,8 +16,14 @@ fmueller83@googlemail.com <Fabian Müller>
 - [x] User dig sand corresponding to the equipment level
 - [x] Equip level is capped at 10
 - [ ] Add level 2 equipment with better efficiency but higher cost
+- [ ] User can buy better equipment with sand
+- [ ] Split Screens into Shop screen and Dig screen
+- [ ] Add Profile Screen for switching equipment
+- [ ] Show some statistics on profile page
 
 # Visuals
 
 - [ ] Style Dig Button
     - [ ] Make Big and Red
+- [ ] Add Icon for Sand
+- [ ] Add Icon for Exp
